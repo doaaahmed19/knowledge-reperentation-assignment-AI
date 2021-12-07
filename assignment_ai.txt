@@ -1,0 +1,83 @@
+#quesion 1
+1) color(carrots,orange)
+#english statement
+   carrots color is orange
+#python code
+   KB.tell(aima.utils.expr("color(carrot,orange)"))
+
+
+2) likes(person,carrots):-vegetables
+#english statement
+   person likes carrots if person is vegetarian
+#python code
+   KB.tell(aima.utils.expr("likes(person,carrot)==>vegetarian(person)"))
+
+
+3) pass(student):- study_hard(student)
+#english statement
+   student pass if student study hard
+#python code
+   KB.tell(aima.utils.expr("pass(student)==>study_hard(student)"))
+
+
+4) ?-pass(who)
+#english statement
+   who will pass?
+# python code
+   answer1=KB.ask(aima.utils.expr(pass(x)'))
+
+
+
+5) ?-teacher(professor,course)
+#english statement
+   which course professor teaches?
+#python code
+   answer2 = KB.ask(aima.utils.expr(''teaches(professer, cousre'))
+                                           
+6) enemies (x,y):- hates(x,y),fights(x,y)
+#english statement
+   if x&y are enemies then x hates y and x fights y:
+#python code
+   KB.tell(aima.utils.expr("hates(x,y) & fights(x,y)==>enimes(x,y)"))
+##################################################
+
+#question 2
+
+1) maria reads logic programming book by author peter lucas
+#fol
+   reads(maria,programmingbook):-author(peter_luces)
+# python code
+    KB.tell(aima.utils.expr("read(maria,logicprogramming) & written(ogicprogramming,peterlucas)")
+         
+
+2)anyone likes shopping if she is a girl 
+ #fol
+    likes(anyone,shopping):-is_girl(anyone)
+ #pythoncode
+    KB.tell(aima.utils.expr("isgirl(x)==>likes(x,shopping)"))
+ 
+ 
+ 3) who likes shopping?
+    #fol
+       ?-likes(shopping)
+    # python code
+       KB.ask(aima.utils.expr("likes(x,shopping)"))
+    
+4) kirke hates any city if it is big and crowdy
+ #fol
+    hates(kirke):-city(crowdy,big)
+ #asnwer in python
+    KB.tell(aima.utils.expr("city(crowdy,big)==>hates(kirke)"))
+                         
+                         
+#######################################################################################
+#question 3
+1) hates(x,y),hates(y,x):-enemies(x,y)
+
+    left hand side must be single
+    correct answer: enemies(x,y):-hates(x,y),hates(y,x)
+
+2) p(x):-(q)(x):-r(x))
+    #answer:
+                         
+                       
